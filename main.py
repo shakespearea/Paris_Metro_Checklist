@@ -2,16 +2,21 @@ import json
 with open('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json', 'r', encoding='utf-8') as f:
     stations = json.load(f)
 
-numMetro = 0
 numEntries = 0
+metroList = {}
 
 for s in stations:
+    name = s["nom_gares"]
+    line = s["indice_lig"]
     if s.get('mode') == 'METRO':
-        name = s.get('nom_gares')
-        line = s.get('indice_lig')
-        print(f"{name} is on  line {line}")
-        numMetro+=1
+        if name not in metroList:
+            metroList[name] = {
+                "lines": [],
+                "visited": False
+            }
+        if line not in metroList[name]["lines"]:
+            metroList[name]["lines"].append(line)
     numEntries+=1
 
-
-print(f"Found {numMetro} metros in {numEntries}")
+print(metroList)
+print(f"Found {len(metroList)} metros in {numEntries}")
