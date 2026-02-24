@@ -1,18 +1,21 @@
 import json
-with open('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json', 'r', encoding='utf-8') as f:
-    stations = json.load(f)
+from pathlib import Path
 
-numEntries = 0
-metroList = {}
+DATA = Path('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json')
 
-for s in stations:
-    numEntries+=1
-    if s.get('mode') != 'METRO':
-        continue
-    name, line = s["nom_gares"], s["indice_lig"]
-    metroList.setdefault(name, { "lines": [],"visited": False})
-    if line not in metroList[name]["lines"]:
-        metroList[name]["lines"].append(line)
+def load_stations():
+    with DATA.open('r', encoding='utf-8') as f:
+        stations = json.load(f)
+    metroList = {}
+    for s in stations:
+        if s.get('mode') != 'METRO':
+            continue
+        name, line = s["nom_gares"], s["indice_lig"]
+        metroList.setdefault(name, { "lines": [],"visited": False})
+        if line not in metroList[name]["lines"]:
+            metroList[name]["lines"].append(line)
+    return metroList
 
-print(metroList)
-print(f"Found {len(metroList)} metros in {numEntries}")
+metro = load_stations()
+print(metro)
+print(f"Found {len(metro)} metro stations.")
