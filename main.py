@@ -6,17 +6,13 @@ numEntries = 0
 metroList = {}
 
 for s in stations:
-    name = s["nom_gares"]
-    line = s["indice_lig"]
-    if s.get('mode') == 'METRO':
-        if name not in metroList:
-            metroList[name] = {
-                "lines": [],
-                "visited": False
-            }
-        if line not in metroList[name]["lines"]:
-            metroList[name]["lines"].append(line)
     numEntries+=1
+    if s.get('mode') != 'METRO':
+        continue
+    name, line = s["nom_gares"], s["indice_lig"]
+    metroList.setdefault(name, { "lines": [],"visited": False})
+    if line not in metroList[name]["lines"]:
+        metroList[name]["lines"].append(line)
 
 print(metroList)
 print(f"Found {len(metroList)} metros in {numEntries}")
