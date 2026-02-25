@@ -1,21 +1,31 @@
-import json
-from pathlib import Path
+from file_manager import load_stations, load_states, save_state
 
-DATA = Path('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json')
-
-def load_stations():
-    with DATA.open('r', encoding='utf-8') as f:
-        stations = json.load(f)
-    metroList = {}
-    for s in stations:
-        if s.get('mode') != 'METRO':
-            continue
-        name, line = s["nom_gares"], s["indice_lig"]
-        metroList.setdefault(name, { "lines": [],"visited": False})
-        if line not in metroList[name]["lines"]:
-            metroList[name]["lines"].append(line)
-    return metroList
-
+# Initialisation
 metro = load_stations()
-print(metro)
 print(f"Found {len(metro)} metro stations.")
+
+# Test 1: Setting
+print("Set pasteur to visited")
+print(f"Local state {metro['Pasteur']}")
+metro["Pasteur"]["visited"] = True
+print(f"Local state {metro['Pasteur']}")
+
+# Test 2: Save and recall
+print("Save state and check pasteur visited")
+save_state(metro)
+states = load_states()
+print(f"Saved state {states['Pasteur']}")
+
+# Test 3: Saving and retention
+print("Unvisit pasteur but verify state remains same")
+print(metro["Pasteur"])
+metro["Pasteur"]["visited"] = False
+print(f"Local state {metro['Pasteur']}")
+print(f"Saved state {states['Pasteur']}")
+
+
+# Test 4: Verify new state saved
+print("Save state and reverify")
+save_state(metro)
+states = load_states()
+print(f"Saved state {states['Pasteur']}")
