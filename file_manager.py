@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 DATA = Path('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json')
-STATES = Path('visited_stations.json')
+DEFAULT_STATES = Path('visited_stations.json')
 
 def load_stations():
     with DATA.open('r', encoding='utf-8') as f:
@@ -17,12 +17,12 @@ def load_stations():
             metroList[name]["lines"].append(line)
     return metroList
 
-def load_states():
-    if STATES.exists():
-        with STATES.open() as f:
+def load_states(file_path=DEFAULT_STATES):
+    if file_path.exists():
+        with file_path.open() as f:
             return json.load(f)
     return {}
 
-def save_state(state):
-    with STATES.open('w') as f:
+def save_state(state, file_path=DEFAULT_STATES):
+    with file_path.open('w') as f:
         json.dump(state, f, indent=2)
