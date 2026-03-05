@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import re
 
 DATA = Path('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json')
 DEFAULT_STATES = Path('visited_stations.json')
@@ -15,7 +16,17 @@ def load_stations():
         metroList.setdefault(name, { "lines": [],"visited": False})
         if line not in metroList[name]["lines"]:
             metroList[name]["lines"].append(line)
-    return metroList
+    
+    orderedList = {}
+    for name, data in metroList.items():
+        for line in data['lines']:
+            orderedList .setdefault(line, []).append(name)
+            
+    return dict(sorted(orderedList.items(), key=line_sort_key))
+
+def line_sort_key(x):
+    match = re.match(r'(\d+)(.*)', x[0])
+    return (int(match.group(1)), match.group(2)) if match else (999, x[0])
 
 def load_states(filePath=DEFAULT_STATES):
     if filePath.exists():
