@@ -4,6 +4,13 @@
         <title>Metro Checklist</title>
     </head>
     <body>
-        Tick the stations visited.
+        <h1>Metro Checklist</h1>
+        <ul>
+            {% for name in stations %}
+            <li>
+                {{ name }}
+            </li>
+            {% endfor %}
+        </ul>
     </body>
 </html>

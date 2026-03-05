@@ -17,12 +17,15 @@ def load_stations():
             metroList[name]["lines"].append(line)
     return metroList
 
-def load_states(file_path=DEFAULT_STATES):
-    if file_path.exists():
-        with file_path.open() as f:
-            return json.load(f)
+def load_states(filePath=DEFAULT_STATES):
+    if filePath.exists():
+        with filePath.open() as f:
+            content = f.read().strip()
+            if not content:
+                return {}
+            return json.loads(content)
     return {}
 
-def save_state(state, file_path=DEFAULT_STATES):
-    with file_path.open('w') as f:
+def save_state(state, filePath=DEFAULT_STATES):
+    with filePath.open('w') as f:
         json.dump(state, f, indent=2)
