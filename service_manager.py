@@ -1,14 +1,14 @@
-from file_manager import load_stations, load_states, save_state
+from file_manager import load_metro_lines, load_states, save_state
 from pathlib import Path
 
 class MetroService:
     def __init__(self, stateFile=Path("visited_stations.json")):
         self.stateFile = stateFile
-        self.stations = load_stations()
+        self.lines = load_metro_lines()
         self.visited = load_states(stateFile)
 
-    def get_stations(self):
-        return self.stations
+    def get_lines(self):
+        return self.lines
     
     def visited_States(self, name):
         return self.visited.get(name, False)

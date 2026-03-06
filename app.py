@@ -8,7 +8,7 @@ metro = MetroService()
 def index():
     if request.method == 'POST':
         metro.toggle_visited(request.form['station'])
-    return render_template("index.html", stations=metro.get_stations(), visited=metro.visited_States)
+    return render_template("index.html", stations=metro.get_lines(), visited=metro.visited_States)
 
 if __name__ == "__main__":
     app.run(debug=True)

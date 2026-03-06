@@ -5,7 +5,7 @@ import re
 DATA = Path('gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne.json')
 DEFAULT_STATES = Path('visited_stations.json')
 
-def load_stations():
+def load_metro_lines():
     with DATA.open('r', encoding='utf-8') as f:
         stations = json.load(f)
     metroList = {}
