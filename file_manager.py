@@ -13,7 +13,7 @@ def load_stations():
         if s.get('mode') != 'METRO':
             continue
         name, line = s["nom_gares"], s["indice_lig"]
-        metroList.setdefault(name, { "lines": [],"visited": False})
+        metroList.setdefault(name, { "lines": []})
         if line not in metroList[name]["lines"]:
             metroList[name]["lines"].append(line)
     
