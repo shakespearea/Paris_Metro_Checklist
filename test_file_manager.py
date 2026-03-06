@@ -6,10 +6,11 @@ from file_manager import load_metro_lines, load_states, save_state
 def metroLines():
     return load_metro_lines()
 
+@pytest.fixture
 def visited():
     return {}
 
-def test_set_sation_visited(visited):
+def test_set_station_visited(visited):
     assert visited.get("Pasteur", False) is False
     visited["Pasteur"] = True
     assert visited["Pasteur"] is True
