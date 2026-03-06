@@ -11,7 +11,12 @@
             <ul>
             {% for name in stations %}
                 <li>
-                    {{ name }}
+                    <form method="POST" style="display: :inline;">
+                        <input type="hidden" name="station" value="{{ name }}">
+                        <button type="submit">
+                            {% if visited(name) %}✅{% else %}🔲{% endif %} {{ name }}
+                        </button>
+                    </form>
                 </li>
                 {% endfor %}
             </ul>
