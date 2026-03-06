@@ -10,7 +10,7 @@ class MetroService:
     def get_lines(self):
         return self.lines
     
-    def visited_States(self, name):
+    def visited_states(self, name):
         return self.visited.get(name, False)
     
     def toggle_visited(self, name):
