@@ -23,4 +23,4 @@ def test_toggle_visited_true_to_false(metro):
 def test_toggle_visited_true_to_false(metro):
     metro.toggle_visited("Nation")
     states = load_states(metro.stateFile)
-    assert states("Nation") is False
+    assert states["Nation"] is False
