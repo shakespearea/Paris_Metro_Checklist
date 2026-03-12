@@ -1,3 +1,5 @@
+# app.py
+
 from flask import Flask,render_template, request
 from service_manager import MetroService
 
@@ -8,7 +10,11 @@ metro = MetroService()
 def index():
     if request.method == 'POST':
         metro.toggle_visited(request.form['station'])
-    return render_template("index.html", stations=metro.get_lines(), visited=metro.visited_states)
+    return render_template("index.html",
+                           stations=metro.get_lines(),
+                           visited=metro.visited_states,
+                           percentages=metro.get_line_percentages()
+                           )
 
 if __name__ == "__main__":
     app.run(debug=True)

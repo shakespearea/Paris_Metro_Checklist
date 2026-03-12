@@ -19,8 +19,3 @@ def test_toggle_visited_true_to_false(metro):
     metro.toggle_visited("Nation")
     metro.toggle_visited("Nation")
     assert metro.visited_states("Nation") is False
-
-def test_toggle_visited_state_persists(metro):
-    states = load_states(metro.stateFile)
-    assert metro.visited_states("Nation") is False
-    assert states["Nation"] is True

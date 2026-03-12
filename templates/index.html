@@ -7,7 +7,7 @@
         <h1>Metro Checklist</h1>
         <ul>
             {% for line, stations in stations.items() %}
-            <h2>Line {{ line }}</h2>
+            <h2>Line {{ line }} - {{ percentages[line] }}%</h2>
             <ul>
             {% for name in stations %}
                 <li>
