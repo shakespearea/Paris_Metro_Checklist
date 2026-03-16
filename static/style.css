@@ -58,11 +58,11 @@
     justify-content: center;
     font-family: 'DM Mono', monospace;
     font-weight: 500;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
-    background: aquamarine;
-    color: blue;
+    background: black;
+    color: white;
 }
 
 .station-item{
@@ -78,10 +78,10 @@
 }
 
 [data-line="1"] .line-badge {background: var(--ratp1); color:black}
-[data-line="2"] .line-badge {background: var(--ratp2); color:black}
-[data-line="3"] .line-badge {background: var(--ratp3); color:black}
+[data-line="2"] .line-badge {background: var(--ratp2); color:white}
+[data-line="3"] .line-badge {background: var(--ratp3); color:white}
 [data-line="3bis"] .line-badge {background: var(--ratp3bis); color:black}
-[data-line="4"] .line-badge {background: var(--ratp4); color:black}
+[data-line="4"] .line-badge {background: var(--ratp4); color:white}
 [data-line="5"] .line-badge {background: var(--ratp5); color:black}
 [data-line="6"] .line-badge {background: var(--ratp6); color:black}
 [data-line="7"] .line-badge {background: var(--ratp7); color:black}
@@ -89,11 +89,11 @@
 [data-line="8"] .line-badge {background: var(--ratp8); color:black}
 [data-line="9"] .line-badge {background: var(--ratp9); color:black}
 [data-line="10"] .line-badge {background: var(--ratp10); color:black}
-[data-line="11"] .line-badge {background: var(--ratp11); color:black}
-[data-line="12"] .line-badge {background: var(--ratp12); color:black}
+[data-line="11"] .line-badge {background: var(--ratp11); color:white}
+[data-line="12"] .line-badge {background: var(--ratp12); color:white}
 [data-line="13"] .line-badge {background: var(--ratp13); color:black}
-[data-line="14"] .line-badge {background: var(--ratp14); color:black}
-[data-line="15"] .line-badge {background: var(--ratp15); color:black}
+[data-line="14"] .line-badge {background: var(--ratp14); color:white}
+[data-line="15"] .line-badge {background: var(--ratp15); color:white}
 [data-line="16"] .line-badge {background: var(--ratp16); color:black}
 [data-line="17"] .line-badge {background: var(--ratp17); color:black}
-[data-line="18"] .line-badge {background: var(--ratp18); color:black}
+[data-line="18"] .line-badge {background: var(--ratp18); color:white}
