@@ -1,9 +1,51 @@
+/* Colours */
+:root {
+    --bg: #f8fbff;
+    --text:#1f1456;
+}
+
 .header {
+    font-family: 'Roboto', sans-serif;
     text-align: center;
-    color: rgb(56, 18, 209);
+    color: var(--text);
 }
 
 .header h1 {
     font-family: 'Parisienne', cursive;
     font-weight: 400;
+}
+
+.body{
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg);
+}
+
+.line-name{
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.line-badge{
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    background: aquamarine;
+    color: blue;
+}
+
+.station-item{
+    list-style: none;
+}
+
+.grid{
+    
+}
+
+.card{
+    
 }
