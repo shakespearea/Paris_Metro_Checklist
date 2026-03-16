@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title>Metro Checklist</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Métro Checklist</title>
     </head>
     <body>
-        <h1>Metro Checklist</h1>
+        <header class="header">
+            <p>Paris - RATP</p>
+            <h1>Métro Checklist</h1>
+            <p>Tap on a station to mark it as visited.</p>
+        </header>
         <ul>
             {% for line, stations in stations.items() %}
             <h2>Line {{ line }} - {{ percentages[line] }}%</h2>
