@@ -1,7 +1,33 @@
 /* Colours */
 :root {
+    /*Source: https://en.wikipedia.org/wiki/Template:RATP_Paris/font_colour */
     --bg: #f8fbff;
     --text:#1f1456;
+    --ratp1:#ffbe02;
+    --ratp2:#006cb8;
+    --ratp3:#9c983a;
+    --ratp3bis:#82c8e6;/*Same as 13*/
+    --ratp4:#a0006e;
+    --ratp5:#f68f4b;
+    --ratp6:#77c695;
+    --ratp7:#ff82b4;
+    --ratp7bis:#77c695;/*Same as 6*/
+    --ratp8:#d282be;
+    --ratp9:#cec92a;
+    --ratp10:#dc9609;
+    --ratp11:#5a230a;
+    --ratp12:#00643c;
+    --ratp13:#82c8e6;
+    --ratp14:#62259d;
+    --ratp15:#a50034;
+    --ratp16:#ff82b4;/*Same as 7*/
+    --ratp17:#cec92a;/*Same as 9*/
+    --ratp18:#00a092;
+    --ratpA:#ed1b2a;
+    --ratpB:#3c91dc;
+    --ratpC:#ffbe02;/*Same as 1*/
+    --ratpD:#00643c;/*Same as 12*/
+    --ratpE:#a0006e;/*Same as 4*/
 }
 
 .header {
@@ -18,6 +44,7 @@
 .body{
     font-family: 'Roboto', sans-serif;
     background: var(--bg);
+    color: var(--text);
 }
 
 .line-name{
@@ -43,9 +70,30 @@
 }
 
 .grid{
-    
+
 }
 
 .card{
     
 }
+
+[data-line="1"] .line-badge {background: var(--ratp1); color:black}
+[data-line="2"] .line-badge {background: var(--ratp2); color:black}
+[data-line="3"] .line-badge {background: var(--ratp3); color:black}
+[data-line="3bis"] .line-badge {background: var(--ratp3bis); color:black}
+[data-line="4"] .line-badge {background: var(--ratp4); color:black}
+[data-line="5"] .line-badge {background: var(--ratp5); color:black}
+[data-line="6"] .line-badge {background: var(--ratp6); color:black}
+[data-line="7"] .line-badge {background: var(--ratp7); color:black}
+[data-line="7b"] .line-badge {background: var(--ratp7bis); color:black}
+[data-line="8"] .line-badge {background: var(--ratp8); color:black}
+[data-line="9"] .line-badge {background: var(--ratp9); color:black}
+[data-line="10"] .line-badge {background: var(--ratp10); color:black}
+[data-line="11"] .line-badge {background: var(--ratp11); color:black}
+[data-line="12"] .line-badge {background: var(--ratp12); color:black}
+[data-line="13"] .line-badge {background: var(--ratp13); color:black}
+[data-line="14"] .line-badge {background: var(--ratp14); color:black}
+[data-line="15"] .line-badge {background: var(--ratp15); color:black}
+[data-line="16"] .line-badge {background: var(--ratp16); color:black}
+[data-line="17"] .line-badge {background: var(--ratp17); color:black}
+[data-line="18"] .line-badge {background: var(--ratp18); color:black}
