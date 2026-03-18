@@ -77,6 +77,41 @@
     
 }
 
+.station-btn.visited {
+    background: green;
+}
+
+.progress {
+    max-width: 750px;
+    margin: 0 auto 2.5rem;
+    background: blue;
+    border: 1px solid orangered;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.progress-label {
+    font-family: 'DM Mono', monospace;
+}
+
+.progress-track {
+    background-color: orangered;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--text);
+    border-radius: 99px;
+}
+
+.progress-pct {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    text-align: right;
+}
+
 [data-line="1"] .line-badge {background: var(--ratp1); color:black}
 [data-line="2"] .line-badge {background: var(--ratp2); color:white}
 [data-line="3"] .line-badge {background: var(--ratp3); color:white}

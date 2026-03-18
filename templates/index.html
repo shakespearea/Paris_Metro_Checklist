@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <script src="{{ url_for('static', filename='scriptManager.js') }}" defer></script>
         <link rel="stylesheet" href="static/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,15 @@
             <h1>Métro Checklist</h1>
             <p>Tap on a station to mark it as visited.</p>
         </header>
+
+        <div class="progress">
+            <span class="progress-label">Total</span>
+            <div class="progress-track">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+            <span class="progress-pct" id="pct">0%</span>
+        </div>
+
         <ul class="grid">
             {% for line, stations in stations.items() %}
             <li class="card" data-line="{{ line }}">
@@ -21,7 +31,6 @@
                 <span class="line-badge">{{ line }}</span>
                 <span class="line-name">Ligne {{ line }}</span>
                 <span>{{ percentages[line] }}%</span>
-                <!--div>ProgressLine</div-->
             </div>
 
             <ul>
@@ -29,8 +38,7 @@
                 <li class="station-item">
                     <form method="POST" style="display:contents;">
                         <input type="hidden" name="station" value="{{ name }}">
-                        <button type="submit">
-                            {% if visited(name) %}✅{% else %}🔲{% endif %}
+                        <button type="submit" class="station-btn {% if visited(name) %}visited{% endif %}">
                             <span>{{ name }}</span>
                         </button>
                     </form>
@@ -39,5 +47,6 @@
             </ul>
         </li>
         {% endfor %}
+        </ul>
     </body>
 </html>
