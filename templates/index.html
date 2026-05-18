@@ -27,7 +27,7 @@
         <ul class="grid">
             {% for line, stations in stations.items() %}
             <li class="card" data-line="{{ line }}">
-            <div onclick="toggleLine(this)">
+            <div class="line-header" onclick="toggleLine(this)">
                 <span class="line-badge">{{ line }}</span>
                 <span class="line-name">Ligne {{ line }}</span>
                 <span>{{ percentages[line] }}%</span>

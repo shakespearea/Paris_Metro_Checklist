@@ -1,7 +1,7 @@
 /* Colours */
 :root {
     /*Source: https://en.wikipedia.org/wiki/Template:RATP_Paris/font_colour */
-    --bg: #f8fbff;
+    --bg: #2596be;
     --text:#1f1456;
     --ratp1:#ffbe02;
     --ratp2:#006cb8;
@@ -49,7 +49,18 @@
 
 .line-name{
     font-family: Roboto;
+    font-size: 1.5rem;
     font-weight: 500;
+}
+
+.line-header{
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.85rem 1.1rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.5s;
 }
 
 .line-badge{
@@ -70,13 +81,31 @@
 }
 
 .grid{
-
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:column;
+    gap: 1.25rem;
 }
 
 .card{
-    
+    background: white;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
+.station-btn{
+    width: 100%;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+    padding: 0.5rem;
+    border-radius: 7px;
+    font-family: roboto;
+    color:var(--text);
+}
 .station-btn.visited {
     background: green;
 }
