@@ -9,3 +9,9 @@ pip install -U pytest
 Data taken from: [data.iledefrance.fr](https://data.iledefrance.fr/explore/dataset/gares-et-stations-du-reseau-ferre-dile-de-france-par-ligne/export/)
 
 Colours taken from: [wikipedia.org/wiki/Template:RATP_Paris/font_colour](https://en.wikipedia.org/wiki/Template:RATP_Paris/font_colour)
+
+## Features still to add
+-[ ]Scrolling/Condensable interface
+-[ ]Progress bars
+-[ ]Aesthetic improvements
+-[ ]Fun stats & facts
