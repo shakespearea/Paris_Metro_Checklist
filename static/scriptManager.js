@@ -1,4 +1,8 @@
 
+function toggleLine(header) {
+    header.closest('.card').classList.toggle('open')
+}
+
 function updateProgress() {
     const all = document.querySelectorAll('.station-btn').length;
     const done = document.querySelectorAll('.station-btn.visited').length;
